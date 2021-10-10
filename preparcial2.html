@@ -1,0 +1,42 @@
+<input type=text size=2 id='nf'/>
+<button onclick='main()'>Ejecutar</button>
+<canvas id='canvas' width=1800 height=1000>
+
+<script>
+	var ctx;
+	function color(r, g, b) {
+        return 'rgba(' + r*2.55 + ',' + g*2.55 + ',' + b*2.55 + ')'
+	}
+
+	
+    function main() {
+		var canvas = document.getElementById('canvas')
+		ctx = canvas.getContext('2d');
+                var nc = parseInt(document.getElementById('nf').value)
+ 	  
+                 for (var i = 0; i < nc; i++) {
+                   for (var j = 0; j < 1; j++) {
+                    ctx.fillStyle = 'rgb(' + Math.floor(255 - (255 * i)/nc) + ', ' +
+                        Math.floor(0 ) + ', 0)';
+                  ctx.fillRect(20, i * (800/nc), 500, (800/nc));
+                      }
+                  }
+                 for (var i = 0; i < nc; i++) {
+                   for (var j = 0; j < 1; j++) {
+                    ctx.fillStyle = 'rgb(' + Math.floor(25 ) + ', ' +
+                        Math.floor(255 - (255 * i)/nc) + ', 0)';
+                  ctx.fillRect(650, i *(800/nc), 500,(800/nc));
+                      }
+                  }
+                 for (var i = 0; i < nc; i++) {
+                   for (var j = 0; j < 1; j++) {
+                    ctx.fillStyle = 'rgb(' + Math.floor(0 ) + ', ' +
+                        Math.floor(0) + ',' + Math.floor(255- (255 * i)/nc)+')';
+                  ctx.fillRect(1280, i*(800/nc), 500, (800/nc));
+                      }
+                  }
+
+	       }
+
+	
+</script>
